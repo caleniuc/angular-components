@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <th *ngFor="let entry of entries" (click)="entry.sortable && onSort(entry.property)">
+            {{ entry.title }}
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td *ngFor="let entry of entries">
+                {{ item[entry.property] }}
+            </td>
+        </tr>
+    </tbody>
+</table>
