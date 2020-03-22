@@ -1,14 +1,18 @@
-<t-grid [data]="data" (sortChange)="onSortChange($event)">
-  <t-entry
-    title="Country"
-    property="name"
-    [sortable]="true"
-  >
-  </t-entry>
-  <t-entry
-    title="Code"
-    property="code"
-    [sortable]="true"
-  >
-  </t-entry>
-</t-grid>
+<div>
+  <div id="grid-wrapper">
+    <t-grid [data]="data" (sortChange)="onSortChange($event)">
+      <t-entry
+        title="Country"
+        property="name"
+        [sortable]="true"
+      >
+      </t-entry>
+      <t-entry
+        title="Code"
+        property="code"
+        [sortable]="true"
+      >
+      </t-entry>
+    </t-grid>
+  </div>
+</div>

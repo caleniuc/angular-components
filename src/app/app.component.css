@@ -1,0 +1,6 @@
+#grid-wrapper {
+    display: flex;
+    justify-content: center;
+    max-height: 50vh;
+    overflow: auto;
+}

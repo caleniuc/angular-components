@@ -1,0 +1,48 @@
+:host {
+    width: 100%;
+}
+
+.t-grid-wrapper {
+    position: relative;
+    width: 100%;
+    color: #051d39;
+}
+
+.t-grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+}
+
+.t-grid-table th {
+    position: sticky;
+    top: 0;
+    background: #f7f8f9;
+    text-align: start;
+}
+
+.t-grid-table th, .t-grid-table td {
+    padding: 12px;
+}
+
+.t-grid-table td {
+    border-bottom: 1px solid #e6e6e6;
+    background: #fff;
+}
+
+.header-content {
+    display: flex;
+}
+
+.sorting-arrows {
+    display: flex;
+    flex-direction: column;
+    font-size: xx-small;
+    margin-left: 12px;
+    color: #bfbfbf;
+}
+
+.active-sort {
+    color: #051d39;
+}

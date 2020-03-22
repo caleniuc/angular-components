@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GridComponent, Entry } from './grid/grid.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
-    Entry
+    Entry,
+    PaginationComponent
   ],
   imports: [
     BrowserModule

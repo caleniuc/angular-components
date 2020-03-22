@@ -1,8 +1,8 @@
 import { Component, OnInit, Directive, ContentChildren, Input, Output, EventEmitter } from '@angular/core';
 
 export enum SortDirection {
-  ASC = 'Ascending',
-  DESC = 'Descending'
+  ASC,
+  DESC
 }
 
 @Directive({selector: 't-entry'})
@@ -39,6 +39,7 @@ export class GridComponent implements OnInit {
   onSort(property) {
     const sortDirection = this.columnsSorting[property];
     let newSortDirection = sortDirection === SortDirection.ASC ? SortDirection.DESC : SortDirection.ASC;
+    this.columnsSorting = {};
     this.columnsSorting[property] = newSortDirection;
     this.data.sort((a, b) => (a[property] > b[property]) ? 1 : -1);
     if (newSortDirection === SortDirection.DESC) {
@@ -46,5 +47,9 @@ export class GridComponent implements OnInit {
     }
 
     this.sortChange.emit({column: property, direction: newSortDirection});
+  }
+
+  isSortActive(property, direction) {
+    return this.columnsSorting[property] === direction;
   }
 }

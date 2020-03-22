@@ -1,14 +1,22 @@
-<table>
-    <thead>
-        <th *ngFor="let entry of entries" (click)="entry.sortable && onSort(entry.property)">
-            {{ entry.title }}
-        </th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of data">
-            <td *ngFor="let entry of entries">
-                {{ item[entry.property] }}
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="t-grid-wrapper">
+    <table class="t-grid-table">
+        <thead>
+            <tr>
+                <th *ngFor="let entry of entries" (click)="entry.sortable && onSort(entry.property)">
+                    <div class="header-content">
+                        <div>{{ entry.title }}</div>
+                        <div class="sorting-arrows"><span [class]="isSortActive(entry.property, 0) ? 'active-sort' : ''">▲</span><span [class]="isSortActive(entry.property, 1) ? 'active-sort' : ''">▼</span></div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td *ngFor="let entry of entries">
+                    {{ item[entry.property] }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <t-pagination></t-pagination>
+</div>
