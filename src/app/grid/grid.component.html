@@ -11,12 +11,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of data">
+            <tr *ngFor="let item of getDataToDisplay()">
                 <td *ngFor="let entry of entries">
                     {{ item[entry.property] }}
                 </td>
             </tr>
         </tbody>
     </table>
-    <t-pagination></t-pagination>
+    <t-pagination [data]="data" [pageSize]="pageSize" [pageNumber]="pageNumber" (pageSizeChange)="onPageSizeChange($event)" (pageNumberChange)="onPageNumberChange($event)"></t-pagination>
 </div>

@@ -1,6 +1,6 @@
 <div>
   <div id="grid-wrapper">
-    <t-grid [data]="data" (sortChange)="onSortChange($event)">
+    <t-grid [data]="data" (sortChange)="onSortChange($event)" pageSize="25" (pageSizeChange)="onPageSizeChange($event)" (pageNumberChange)="onPageNumberChange($event)">
       <t-entry
         title="Country"
         property="name"

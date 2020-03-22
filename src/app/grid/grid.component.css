@@ -13,6 +13,7 @@
     border-collapse: collapse;
     border: 1px solid #e6e6e6;
     border-top: none;
+    table-layout: fixed;
 }
 
 .t-grid-table th {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Directive, ContentChildren, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Directive, ContentChildren, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 export enum SortDirection {
   ASC,
@@ -15,7 +15,8 @@ export class Entry {
 @Component({
   selector: 't-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css']
+  styleUrls: ['./grid.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush   
 })
 export class GridComponent implements OnInit {
   @Input() data;
@@ -25,6 +26,7 @@ export class GridComponent implements OnInit {
   @Output() pageSizeChange = new EventEmitter();
 
   columnsSorting = {};
+  pageNumber = 1;
 
   @ContentChildren(Entry) entries;
 
@@ -51,5 +53,24 @@ export class GridComponent implements OnInit {
 
   isSortActive(property, direction) {
     return this.columnsSorting[property] === direction;
+  }
+
+  getDataToDisplay() {
+    if (!this.pageSize) {
+      return this.data;
+    }
+    return this.data.slice((this.pageNumber - 1) * this.pageSize, this.pageSize * this.pageNumber);
+  }
+
+  onPageSizeChange(event) {
+    const {target: {value}} = event;
+    this.pageSize = value;
+    this.pageNumber = 1;
+    this.pageSizeChange.emit(value);
+  }
+
+  onPageNumberChange(page) {
+    this.pageNumber = page + 1;
+    this.pageNumberChange.emit(page + 1);
   }
 }
