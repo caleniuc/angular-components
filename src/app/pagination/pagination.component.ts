@@ -42,6 +42,27 @@ export class PaginationComponent implements OnInit {
     this.pageNumberChange.emit(page);
   }
 
+  selectFirstPage() {
+    this.onPageNumberChange(0);
+  }
+
+  selectPreviousPage() {
+    if (this.pageNumber > 1) {
+      this.onPageNumberChange(this.pageNumber - 2);
+    }
+  }
+
+  selectNextPage() {
+    const totalPages = this.calculateTotalPages();
+    if (this.pageNumber < totalPages) {
+      this.onPageNumberChange(this.pageNumber);
+    }
+  }
+
+  selectLastPage() {
+    this.onPageNumberChange(this.calculateTotalPages() - 1);
+  }
+
   getPages() {
     const totalPages = this.calculateTotalPages();
     if (totalPages < 6) {
@@ -70,5 +91,12 @@ export class PaginationComponent implements OnInit {
     }
 
     return [...Array(this.calculateTotalPages()).keys()].slice(lowerLimit, upperLimit);
+  }
+
+  getSelectedPageClass(page) {
+    if (page + 1 === this.pageNumber) {
+      return 'selected-page';
+    }
+    return '';
   }
 }
