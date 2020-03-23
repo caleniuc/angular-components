@@ -34,3 +34,7 @@
 .page-selector .selected-page, .page-selector .page:hover, .page-selector .arrow:hover {
     color: #051d39;
 }
+
+.page-selector .backward span:nth-child(2), .page-selector .forward span:nth-child(2) {
+    margin-left: -3px;
+}

@@ -47,3 +47,7 @@
 .active-sort {
     color: #051d39;
 }
+
+.header-sortable {
+    cursor: pointer;
+}

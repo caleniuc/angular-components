@@ -1,10 +1,10 @@
 <div *ngIf="!!pageSize" class="t-grid-pagination">
     <ul class="page-selector">
-        <li><span class="arrow" (click)="selectFirstPage()">≪</span></li>
+        <li><span class="arrow backward" (click)="selectFirstPage()"><span><</span><span><</span></span></li>
         <li><span class="arrow" (click)="selectPreviousPage()"><</span></li>
         <li><span *ngFor="let page of getPages()" (click)="onPageNumberChange(page)" [class]="'page ' + getSelectedPageClass(page)">{{page + 1}}</span></li>
         <li><span class="arrow" (click)="selectNextPage()">></span></li>
-        <li><span class="arrow" (click)="selectLastPage()">≫</span></li>
+        <li><span class="arrow forward" (click)="selectLastPage()"><span>></span><span>></span></span></li>
     </ul>
     <div class="shown-items">
         View
