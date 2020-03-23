@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {countries} from './countries';
+import {users} from './mock_data';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,7 @@ import {countries} from './countries';
 })
 export class AppComponent {
   title = 'angular-components';
-  data = countries;
+  data = users;
 
   onSortChange(change) {
     const {column, direction} = change;

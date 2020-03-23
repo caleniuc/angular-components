@@ -2,14 +2,32 @@
   <div id="grid-wrapper">
     <t-grid [data]="data" (sortChange)="onSortChange($event)" pageSize="25" (pageSizeChange)="onPageSizeChange($event)" (pageNumberChange)="onPageNumberChange($event)">
       <t-entry
-        title="Country"
-        property="name"
+        title="First Name"
+        property="first_name"
         [sortable]="true"
       >
       </t-entry>
       <t-entry
-        title="Code"
-        property="code"
+        title="Last Name"
+        property="last_name"
+        [sortable]="true"
+      >
+      </t-entry>
+      <t-entry
+        title="Email"
+        property="email"
+        [sortable]="true"
+      >
+      </t-entry>
+      <t-entry
+        title="Gender"
+        property="gender"
+        [sortable]="true"
+      >
+      </t-entry>
+      <t-entry
+        title="Ip Address"
+        property="ip_address"
         [sortable]="true"
       >
       </t-entry>
