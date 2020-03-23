@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GridComponent, Entry } from './grid/grid.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
     Entry,
-    PaginationComponent
+    PaginationComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule
