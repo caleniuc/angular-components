@@ -1,0 +1,8 @@
+.progress-indicator {
+    transform: rotate(-90deg);
+}
+
+.progress {
+    fill: none;
+    stroke-linecap: round;
+}

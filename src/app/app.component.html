@@ -33,6 +33,25 @@
     </t-grid>
   </div>
   <div id="progress-wrapper">
-    <t-progress></t-progress>
+    <div id="progress-controls">
+      <div class="progress-selector">
+        <div>Change Progress</div>
+        <input id="progress-control" type="range" min="0" max="100" value="50" (input)="changeProgress($event)" />
+      </div>
+      <div class="radius-selector">
+        <div>Change Radius</div>
+        <input id="radius-control" type="range" min="50" max="200" value="50" (input)="changeRadius($event)"/>
+      </div>
+      <div class="color-change">
+        <div>Change Color</div>
+        <div id="color-change-controls">
+          <input id="color-input" type="text" placeholder="#008000" value="#008000" />
+          <button (click)="changeColor()">Change</button>
+        </div>
+      </div>
+    </div>
+    <t-progress [radius]="radius" [progress]="progress" [color]="color" (complete)="onComplete()"></t-progress>
+
+    
   </div>
 </div>

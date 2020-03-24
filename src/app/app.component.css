@@ -14,6 +14,17 @@
 
 #progress-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin: 0 100px;
+}
+
+#progress-controls {
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+}
+
+#color-input {
+    margin-right: 12px;
 }

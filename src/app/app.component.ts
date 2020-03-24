@@ -8,6 +8,9 @@ import {users} from './mock_data';
 export class AppComponent {
   title = 'angular-components';
   data = users;
+  progress = 50;
+  color = '#008000';
+  radius = 50;
 
   onSortChange(change) {
     const {column, direction} = change;
@@ -20,5 +23,28 @@ export class AppComponent {
 
   onPageNumberChange(page) {
     console.log(`A page number change was emitted. New page number is ${page}`);
+  }
+
+  setProgress(value) {
+    this.progress = value;
+  }
+
+  changeColor() {
+    const input = <HTMLInputElement>document.getElementById('color-input');
+    this.color = input.value;
+  }
+
+  changeRadius(event) {
+    const {target: {value}} = event;
+    this.radius = parseInt(value);
+  }
+
+  changeProgress(event) {
+    const {target: {value}} = event;
+    this.progress = parseInt(value);
+  }
+
+  onComplete() {
+    console.log('Progress indicator completed');
   }
 }
