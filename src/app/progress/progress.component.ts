@@ -38,10 +38,10 @@ export class ProgressComponent implements OnInit {
       const {previousValue, currentValue} = p;
       this.checkProgress(this.setProgress, currentValue);
       this.checkProgress(this.setPreviousProgress, previousValue);
-    }
 
-    if (this.progress === 100) {
-      this.complete.emit();
+      if (previousValue < this.progress && this.progress === 100) {
+        this.complete.emit();
+      }
     }
   }
 
