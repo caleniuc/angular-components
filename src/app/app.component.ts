@@ -41,9 +41,8 @@ export class AppComponent {
     this.radius = parseInt(value);
   }
 
-  changeProgress(event) {
-    const {target: {value}} = event;
-    this.progress = parseInt(value);
+  changeProgress(value) {
+    this.progress = value;
   }
 
   onComplete() {

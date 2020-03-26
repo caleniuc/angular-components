@@ -1,8 +1,8 @@
 import { Component, OnInit, Directive, ContentChildren, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 export enum SortDirection {
-  ASC,
-  DESC
+  ASC = 'Ascendent',
+  DESC = 'Descendent'
 }
 
 @Directive({selector: 't-entry'})

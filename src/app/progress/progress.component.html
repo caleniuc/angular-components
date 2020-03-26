@@ -1,13 +1,22 @@
 <svg [attr.width]="svgSize" [attr.height]="svgSize" [attr.viewBox]="'0 0 ' + svgSize + ' ' + svgSize" class="progress-indicator">
-    <circle [attr.cx]="svgSize / 2" [attr.cy]="svgSize / 2" [attr.r]="radius" fill="none" stroke="#e6e6e6" [attr.stroke-width]="strokeWidth" />
+    <circle
+        [attr.cx]="svgSize / 2"
+        [attr.cy]="svgSize / 2"
+        [attr.r]="radius"
+        fill="none"
+        [attr.stroke]="color"
+        [attr.stroke-width]="strokeWidth"
+        [attr.stroke-opacity]="0.3"
+    />
     <circle
         class="progress"
+        id="progress"
         [attr.cx]="svgSize / 2"
         [attr.cy]="svgSize / 2"
         [attr.r]="radius"
         [attr.stroke]="color"
         [attr.stroke-width]="strokeWidth"
         [attr.stroke-dasharray]="circumference"
-        [attr.stroke-dashoffset]="getStrokeFill()"
+        [attr.stroke-dashoffset]="strokeDashOffset"
     />
 </svg>

@@ -25,6 +25,18 @@
     margin-right: 200px;
 }
 
+#progress-controls > div {
+    margin-bottom: 24px;
+}
+
 #color-input {
     margin-right: 12px;
+}
+
+.progress-btn {
+    margin-right: 12px;
+}
+
+.selector-title {
+    margin-bottom: 12px;
 }

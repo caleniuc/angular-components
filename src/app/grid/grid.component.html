@@ -5,7 +5,7 @@
                 <th *ngFor="let entry of entries" (click)="entry.sortable && onSort(entry.property)" [class]="entry.sortable ? 'header-sortable' : ''">
                     <div class="header-content">
                         <div>{{ entry.title }}</div>
-                        <div class="sorting-arrows" *ngIf="entry.sortable"><span [class]="isSortActive(entry.property, 0) ? 'active-sort' : ''">▲</span><span [class]="isSortActive(entry.property, 1) ? 'active-sort' : ''">▼</span></div>
+                        <div class="sorting-arrows" *ngIf="entry.sortable"><span [class]="isSortActive(entry.property, 'Ascendent') ? 'active-sort' : ''">▲</span><span [class]="isSortActive(entry.property, 'Descendent') ? 'active-sort' : ''">▼</span></div>
                     </div>
                 </th>
             </tr>

@@ -13,15 +13,20 @@
   <div id="progress-wrapper">
     <div id="progress-controls">
       <div class="progress-selector">
-        <div>Change Progress</div>
-        <input id="progress-control" type="range" min="0" max="100" value="50" (input)="changeProgress($event)" />
+        <div class="selector-title">Change Progress</div>
+        <button class="progress-btn" (click)="changeProgress(0)">0</button>
+        <button class="progress-btn" (click)="changeProgress(25)">25</button>
+        <button class="progress-btn" (click)="changeProgress(50)">50</button>
+        <button class="progress-btn" (click)="changeProgress(75)">75</button>
+        <button class="progress-btn" (click)="changeProgress(100)">100</button>
+
       </div>
       <div class="radius-selector">
-        <div>Change Radius</div>
+        <div class="selector-title">Change Radius</div>
         <input id="radius-control" type="range" min="50" max="200" value="50" (input)="changeRadius($event)"/>
       </div>
       <div class="color-change">
-        <div>Change Color</div>
+        <div class="selector-title">Change Color</div>
         <div id="color-change-controls">
           <input id="color-input" type="text" placeholder="#008000" value="#008000" />
           <button (click)="changeColor()">Change</button>
