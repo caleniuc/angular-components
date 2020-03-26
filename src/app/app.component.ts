@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {users} from './mock_data';
+import {gridEntryProps} from './gridProps';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +12,7 @@ export class AppComponent {
   progress = 50;
   color = '#008000';
   radius = 50;
+  gridEntryProps = gridEntryProps;
 
   onSortChange(change) {
     const {column, direction} = change;

@@ -2,32 +2,10 @@
   <div id="grid-wrapper">
     <t-grid [data]="data" (sortChange)="onSortChange($event)" pageSize="25" (pageSizeChange)="onPageSizeChange($event)" (pageNumberChange)="onPageNumberChange($event)">
       <t-entry
-        title="First Name"
-        property="first_name"
-        [sortable]="true"
-      >
-      </t-entry>
-      <t-entry
-        title="Last Name"
-        property="last_name"
-        [sortable]="true"
-      >
-      </t-entry>
-      <t-entry
-        title="Email"
-        property="email"
-        [sortable]="true"
-      >
-      </t-entry>
-      <t-entry
-        title="Gender"
-        property="gender"
-        [sortable]="true"
-      >
-      </t-entry>
-      <t-entry
-        title="Ip Address"
-        property="ip_address"
+        *ngFor="let entryProps of gridEntryProps"
+        [title]="entryProps.title"
+        [property]="entryProps.property"
+        [sortable]="entryProps.sortable"
       >
       </t-entry>
     </t-grid>
@@ -51,7 +29,6 @@
       </div>
     </div>
     <t-progress [radius]="radius" [progress]="progress" [color]="color" (complete)="onComplete()"></t-progress>
-
     
   </div>
 </div>

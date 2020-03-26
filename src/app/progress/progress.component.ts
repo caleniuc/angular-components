@@ -36,8 +36,8 @@ export class ProgressComponent implements OnInit {
     }
     if (p) {
       const {previousValue, currentValue} = p;
-      this.setProgress(this.progress, currentValue);
-      this.setProgress(this.previousProgress, previousValue);
+      this.checkProgress(this.setProgress, currentValue);
+      this.checkProgress(this.setPreviousProgress, previousValue);
     }
 
     if (this.progress === 100) {
@@ -45,13 +45,21 @@ export class ProgressComponent implements OnInit {
     }
   }
 
-  setProgress(progress, value) {
+  checkProgress(setValue, value) {
     if (value === undefined || value < 0) {
-      progress = 0;
+      setValue(0);
     }
     else if (value > 100) {
-      progress = 100;
+      setValue(100);
     }
+  }
+
+  setProgress = (value) => {
+    this.progress = value;
+  }
+
+  setPreviousProgress = (value) => {
+    this.previousProgress = value;
   }
 
   getStrokeFill() {
