@@ -22,6 +22,7 @@ export class ProgressComponent implements OnInit {
   strokeDashOffset;
   animationInterval;
   animationProgress;
+  progressTextSize;
   constructor() { }
 
   ngOnInit(): void {
@@ -41,6 +42,7 @@ export class ProgressComponent implements OnInit {
       this.svgSize = this.radius * 2 + this.strokeWidth;
       this.circumference = 2 * Math.PI * this.radius;
       this.strokeDashOffset = this.getStrokeFill(this.progress);
+      this.progressTextSize = this.radius / 2;
     }
     if (p) {
       const {previousValue, currentValue} = p;

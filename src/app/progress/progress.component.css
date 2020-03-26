@@ -2,7 +2,11 @@
     transform: rotate(-90deg);
 }
 
-.progress {
+.progress-circle {
     fill: none;
     stroke-linecap: round;
+}
+
+.progress-text {
+    transform: rotate(90deg);
 }
