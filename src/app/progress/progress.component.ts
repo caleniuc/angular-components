@@ -53,7 +53,7 @@ export class ProgressComponent implements OnInit {
         this.animate(this.previousProgress, this.progress);
       }
 
-      if (previousValue < this.progress && this.progress === 100) {
+      if (this.previousProgress < this.progress && this.progress === 100) {
         this.complete.emit();
       }
     }
